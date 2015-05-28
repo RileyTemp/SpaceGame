@@ -7,7 +7,7 @@ public class Player {
     private Image img;
     int i;
     int x, y, bx, by, dx, dy, backgroundX;
-    private final int SPEED = 15;
+    private final int SPEED = 25;
     boolean left, right, up, down;
     ImageIcon p1 = new ImageIcon("Spaceship left.png");// Looking Left
     ImageIcon p2 = new ImageIcon("Spaceship right.png");// Looking Right

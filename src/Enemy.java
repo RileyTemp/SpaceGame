@@ -8,7 +8,7 @@ public class Enemy {
     int x, y, dx, dy;
     static int X, Y, I, BX, BY, nHit;
     int nWidth, nLength, EH, EW, nEXP, nSpawn;
-    private final int nSpeed =5                 ;
+    private final int nSpeed =10;                 ;
     ImageIcon e1 = new ImageIcon("Enemy1.png");
     ImageIcon e2 = new ImageIcon("Enemy2.png");
     int imgWidth = e1.getIconHeight();
@@ -31,8 +31,8 @@ public class Enemy {
     public Enemy() {
         dx = 0;
         dy = 0;
-        x = 0;
-        y = 0;
+        x = 50;
+        y = 50;
         nEXP = 5;
         arnEnemy[1] = e1.getImage();
         arnEnemy[2] = e2.getImage();

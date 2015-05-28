@@ -13,7 +13,7 @@ public class Bullet {
     int x, y, dx, dy, nStahp, nStahp2, nCount, nCount2, nStop, nLeft,
             nRight, nHit, nKill;
     boolean shoot, stop, go;
-    private final int bSpeed = 40;
+    private final int bSpeed = 80;
     ImageIcon b1 = new ImageIcon("laser1.png");
     ImageIcon b2 = new ImageIcon("laser2.png");
     int imgWidth = b1.getIconHeight();

@@ -42,7 +42,7 @@ public class PanBoard extends JPanel implements ActionListener {
         //e2 = new Enemy2();
         addKeyListener(new Movement());
         setFocusable(true);
-        ImageIcon i1 = new ImageIcon("Background.png");
+        ImageIcon i1 = new ImageIcon("space.png");
         background = i1.getImage();
         timer = new Timer(80, this);
         timer.start();
