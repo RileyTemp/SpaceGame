@@ -1,3 +1,4 @@
+
 import java.awt.event.KeyEvent;
 import javax.swing.*;
 import java.awt.Image;
@@ -136,8 +137,8 @@ public class Bullet {
         if (code == KeyEvent.VK_SPACE) {
             if (I == 0) { //Looking Left
                 if (nS == 1) {
-                    x = X-2;
-                    y = Y-2;
+                    x = X - 2;
+                    y = Y - 2;
                     stop = false;
                     shoot = true;
                     nLeft = 1;
@@ -154,8 +155,8 @@ public class Bullet {
             }
             if (I == 1) { // Looking Right
                 if (nS == 1) {
-                    x = X-2;
-                    y = Y-2;
+                    x = X - 2;
+                    y = Y - 2;
                     stop = false;
                     shoot = true;
                     nRight = 1;
