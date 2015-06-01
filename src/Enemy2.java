@@ -1,4 +1,4 @@
-/*
+
 import javax.swing.*;
 import java.awt.Image;
 
@@ -99,4 +99,3 @@ public class Enemy2 {
         return img;
     }
 }
-*/

@@ -11,14 +11,16 @@ public class Bullet {
     int EHMin, EWMin;
     static int X, Y, I, EX, EY, EH, EW, K;
     int x, y, dx, dy, nStahp, nStahp2, nCount, nCount2, nStop, nLeft,
-            nRight, nHit, nKill;
+            nRight, nUp, nDown, nHit, nKill;
     boolean shoot, stop, go;
     private final int bSpeed = 80;
     ImageIcon b1 = new ImageIcon("laser1.png");
     ImageIcon b2 = new ImageIcon("laser2.png");
+    ImageIcon b3 = new ImageIcon("laser3.png");
+    ImageIcon b4 = new ImageIcon("laser4.png");
     int imgWidth = b1.getIconHeight();
     int imgHeight = b2.getIconWidth();
-    Image arnShooting[] = new Image[3];
+    Image arnShooting[] = new Image[4];
     Label JLabel;
 
     static void SetEnemy(int _x, int _y, int _EH, int _EW, int _K) {
@@ -45,6 +47,8 @@ public class Bullet {
         nStahp2 = -400;
         nLeft = 0;
         nRight = 0;
+        nUp = 0;
+        nDown = 0;
         dx = 0;
         dy = 0;
         stop = false;

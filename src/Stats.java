@@ -45,7 +45,7 @@ public class Stats {
         if (slvl.equals("one")) {
             lvl = 1;
             atk = 5;
-            hp = 25;
+            hp = 50;
             Xpgoal = 100;
         } else if (slvl.equals("two")) {
             lvl = 2;

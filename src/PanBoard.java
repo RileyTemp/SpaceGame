@@ -1,3 +1,4 @@
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +12,7 @@ public class PanBoard extends JPanel implements ActionListener {
     private Player p;
     private Bullet b;
     private Enemy e;
-    //private Enemy2 e2;
+    //private Enemy2 h;
     private Timer timer;
     private Image background;
     static int nAtk, nLvl, nHp, nCurrxp, nXpgoal, nHit, nHit1;
@@ -39,10 +40,10 @@ public class PanBoard extends JPanel implements ActionListener {
         p = new Player();
         b = new Bullet();
         e = new Enemy();
-        //e2 = new Enemy2();
+        //h = new Enemy2();
         addKeyListener(new Movement());
         setFocusable(true);
-        ImageIcon i1 = new ImageIcon("space.png");
+        ImageIcon i1 = new ImageIcon("background.png");
         background = i1.getImage();
         timer = new Timer(80, this);
         timer.start();
@@ -87,7 +88,7 @@ public class PanBoard extends JPanel implements ActionListener {
         p.move();
         b.move();
         e.move();
-        //e2.move();
+        //h.move();
         repaint();
     }
 
@@ -98,7 +99,7 @@ public class PanBoard extends JPanel implements ActionListener {
         g2d.drawImage(b.getImage(), b.getBX(), b.getBY(), null);
         g2d.drawImage(p.getImage(), p.getX(), p.getY(), null);
         g2d.drawImage(e.getImage(), e.getEX(), e.getEY(), null);
-       // g2d.drawImage(e2.getImage(), e2.getEX(), e2.getEY(), null);
+        //g2d.drawImage(h.getImage(), h.getEX(), h.getEY(), null);
     }
 
     private class Movement extends KeyAdapter {

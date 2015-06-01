@@ -6,7 +6,7 @@ public class Frame extends JFrame {
         add(new PanBoard());
         setTitle("Welp");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1200, 600); //1370, 730 for fullscreen for laptop
+        setSize(1000, 1000); //1370, 730 for fullscreen for laptop
         this.setResizable(true);
         setLocationRelativeTo(null);
         setVisible(true);
