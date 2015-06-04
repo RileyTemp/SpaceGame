@@ -7,8 +7,8 @@ public class Player {
 
     private Image img;
     int i;
-    int x, y, bx, by, dx, dy, backgroundX;
-    private final int SPEED = 30;
+    int x, y, bx, by, dx, dy;
+    private final int SPEED = 35;
     boolean left, right, up, down;
     ImageIcon p1 = new ImageIcon("Spaceship left.png");// Looking Left
     ImageIcon p2 = new ImageIcon("Spaceship right.png");// Looking Right
@@ -35,7 +35,6 @@ public class Player {
 
     public void move() {
         Bullet.SetPlayer(x, y, i);
-        Enemy.SetPlayer(x, y, i);
         x += dx;
         y += dy;
 
@@ -55,23 +54,27 @@ public class Player {
             i = 1;
         } else if (left == true) {
             i = 0;
+        } else if (up == true) {
+            i = 2;
+        } else if (down == true) {
+            i = 3;
         }
         return img;
     }
 
     public void keyPressed(KeyEvent w) {
         int code = w.getKeyCode();
-        if (code == KeyEvent.VK_A) {
+        if (code == KeyEvent.VK_LEFT) {
             i = 0;
             dx = -SPEED;
-        } else if (code == KeyEvent.VK_D) {
+        } else if (code == KeyEvent.VK_RIGHT) {
             i = 1;
             dx = SPEED;
-        } else if (code == KeyEvent.VK_W) {
+        } else if (code == KeyEvent.VK_UP) {
             i = 2;
 
             dy = -SPEED;
-        } else if (code == KeyEvent.VK_S) {
+        } else if (code == KeyEvent.VK_DOWN) {
             i = 3;
             dy = SPEED;
         }
@@ -80,25 +83,25 @@ public class Player {
 
     public void keyReleased(KeyEvent w) {
         int code = w.getKeyCode();
-        if (code == KeyEvent.VK_A) {
+        if (code == KeyEvent.VK_LEFT) {
             left = false;
             if (right) {
             } else {
                 dx = 0;
             }
-        } else if (code == KeyEvent.VK_D) {
+        } else if (code == KeyEvent.VK_RIGHT) {
             right = false;
             if (left) {
             } else {
                 dx = 0;
             }
-        } else if (code == KeyEvent.VK_W) {
+        } else if (code == KeyEvent.VK_UP) {
             up = false;
             if (down) {
             } else {
                 dy = 0;
             }
-        } else if (code == KeyEvent.VK_S) {
+        } else if (code == KeyEvent.VK_DOWN) {
             down = false;
             if (up) {
             } else {

@@ -10,17 +10,17 @@ public class Bullet {
     int k, nS;
     int EHMin, EWMin;
     static int X, Y, I, EX, EY, EH, EW, K;
-    int x, y, dx, dy, nStahp, nStahp2, nCount, nCount2, nStop, nLeft,
+    int x, y, dx, dy, nStahp, nStahp2, nStahp3, nStahp4, nCount, nCount2, nStop, nLeft,
             nRight, nUp, nDown, nHit, nKill;
     boolean shoot, stop, go;
-    private final int bSpeed = 80;
+    private final int bSpeed = 30;
     ImageIcon b1 = new ImageIcon("laser1.png");
     ImageIcon b2 = new ImageIcon("laser2.png");
     ImageIcon b3 = new ImageIcon("laser3.png");
     ImageIcon b4 = new ImageIcon("laser4.png");
     int imgWidth = b1.getIconHeight();
     int imgHeight = b2.getIconWidth();
-    Image arnShooting[] = new Image[4];
+    Image arnShooting[] = new Image[5];
     Label JLabel;
 
     static void SetEnemy(int _x, int _y, int _EH, int _EW, int _K) {
@@ -45,6 +45,8 @@ public class Bullet {
         nS = 1;
         nStahp = 400;
         nStahp2 = -400;
+        nStahp3 = 400;
+        nStahp4 = -400;
         nLeft = 0;
         nRight = 0;
         nUp = 0;
@@ -56,6 +58,8 @@ public class Bullet {
         go = false;
         arnShooting[1] = b1.getImage();
         arnShooting[2] = b2.getImage();
+        arnShooting[3] = b3.getImage();
+        arnShooting[4] = b4.getImage();
     }
 
     public void move() {

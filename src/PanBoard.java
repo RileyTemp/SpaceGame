@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.*;
 
 public class PanBoard extends JPanel implements ActionListener {
-
+    
     static boolean drawn = false;
     private Player p;
     private Bullet b;
@@ -19,7 +19,7 @@ public class PanBoard extends JPanel implements ActionListener {
     static String sName;
     Label JLabel;
     int nChange = 1;
-
+    
     static void setStats(int _Lvl, int _Atk, int _Hp, String _sName,
             int _currxp, int _xpgoal) {
         nAtk = _Atk;
@@ -29,12 +29,12 @@ public class PanBoard extends JPanel implements ActionListener {
         nCurrxp = _currxp;
         nXpgoal = _xpgoal;
     }
-
+    
     static void setHit(int _nHit, int _nHit1) {
         nHit = _nHit;
         nHit1 = _nHit1;
     }
-
+    
     public PanBoard() {
         super();
         p = new Player();
@@ -43,7 +43,7 @@ public class PanBoard extends JPanel implements ActionListener {
         //h = new Enemy2();
         addKeyListener(new Movement());
         setFocusable(true);
-        ImageIcon i1 = new ImageIcon("background.png");
+        ImageIcon i1 = new ImageIcon("Make it rain.png");
         background = i1.getImage();
         timer = new Timer(80, this);
         timer.start();
@@ -82,7 +82,7 @@ public class PanBoard extends JPanel implements ActionListener {
         
          }*/
     }
-
+    
     public void actionPerformed(ActionEvent arg0) {
         //Label();
         p.move();
@@ -91,7 +91,7 @@ public class PanBoard extends JPanel implements ActionListener {
         //h.move();
         repaint();
     }
-
+    
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2d = (Graphics2D) g;
@@ -101,19 +101,21 @@ public class PanBoard extends JPanel implements ActionListener {
         g2d.drawImage(e.getImage(), e.getEX(), e.getEY(), null);
         //g2d.drawImage(h.getImage(), h.getEX(), h.getEY(), null);
     }
-
+    
     private class Movement extends KeyAdapter {
-
+        
         @Override
         public void keyReleased(KeyEvent w) {
             b.keyReleased2(w);
             p.keyReleased(w);
+            e.keyReleased(w);
         }
-
+        
         @Override
         public void keyPressed(KeyEvent w) {
             b.keyPressed2(w);
             p.keyPressed(w);
+            e.keyPressed(w);
         }
     }
 }

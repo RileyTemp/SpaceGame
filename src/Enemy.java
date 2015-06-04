@@ -1,19 +1,24 @@
+
 import javax.swing.*;
+import java.awt.event.KeyEvent;
 import java.awt.Image;
 
 public class Enemy {
 
     private Image img;
     int k;
-    int x, y, dx, dy;
+    int x, y, dx, dy, bx, by;
     static int X, Y, I, BX, BY, nHit;
+    boolean left, right, up, down;
     int nWidth, nLength, EH, EW, nEXP, nSpawn;
-    private final int nSpeed =15;                 ;
-    ImageIcon e1 = new ImageIcon("Enemy1.png");
-    ImageIcon e2 = new ImageIcon("Enemy2.png");
+    private final int nSpeed = 20;
+    ImageIcon e1 = new ImageIcon("Enemy2.png");
+    ImageIcon e2 = new ImageIcon("Enemy1.png");
+    ImageIcon e3 = new ImageIcon("Enemy3.png");
+    ImageIcon e4 = new ImageIcon("Enemy4.png");
     int imgWidth = e1.getIconHeight();
     int imgHeight = e2.getIconWidth();
-    Image arnEnemy[] = new Image[3];
+    Image arnEnemy[] = new Image[5];
     int arnHit[] = new int[50];
 
     static void SetPlayer(int _x, int _y, int _i) {
@@ -36,6 +41,8 @@ public class Enemy {
         nEXP = 5;
         arnEnemy[1] = e1.getImage();
         arnEnemy[2] = e2.getImage();
+        arnEnemy[3] = e3.getImage();
+        arnEnemy[4] = e4.getImage();
     }
 
     public void move() {
@@ -43,59 +50,75 @@ public class Enemy {
         EW = imgWidth + x - 30;
         x += dx;
         y += dy;
-         Bullet.SetEnemy(x, y, EH, EW, k);
-
-        if (k == 1 || k == 2) {
-            if (X > x) {
-                dx = nSpeed;
-            } else if (X < x) {
-                dx = -nSpeed;
-            } else {
-                dx = 0;
-            }
-            if (Y > y) {
-                dy = nSpeed;
-            } else if (Y < y) {
-                dy = -nSpeed;
-            } else {
-                dy = 0;
-            }
-            
-        }
+        Bullet.SetEnemy(x, y, EH, EW, k);
     }
 
     public int getEX() {
-        return x - 30;
+        return x;
     }
 
     public int getEY() {
-        return y - 30;
+        return y;
     }
 
     public Image getImage() {
         img = arnEnemy[k];
-        if (nHit == nEXP) {
+        if (right == true) {
+            k = 1;
+        } else if (left == true) {
             k = 0;
-            x = 3000;
-            y = 3000;
-            nSpawn++;
-            if (nSpawn >= 20) {
-                nSpawn = 0;
-                x = 100;
-                y = 100;
-                nEXP += 5;
-            }
-            return img;
+        } else if (up == true) {
+            k = 2;
+        } else if (down == true) {
+            k = 3;
         }
-            if (X >= x) {
-                k = 1;
-                return img;
-            }
-            if (X <= x) {
-                k = 2;
-                return img;
-            }
         return img;
     }
 
+    public void keyPressed(KeyEvent w) {
+        int code = w.getKeyCode();
+        if (code == KeyEvent.VK_A) {
+            k = 1;
+            dx = -nSpeed;
+        } else if (code == KeyEvent.VK_D) {
+            k = 2;
+            dx = nSpeed;
+        } else if (code == KeyEvent.VK_W) {
+            k = 3;
+            dy = -nSpeed;
+        } else if (code == KeyEvent.VK_S) {
+            k = 4;
+            dy = nSpeed;
+        }
+
+    }
+
+    public void keyReleased(KeyEvent w) {
+        int code = w.getKeyCode();
+        if (code == KeyEvent.VK_A) {
+            left = false;
+            if (right) {
+            } else {
+                dx = 0;
+            }
+        } else if (code == KeyEvent.VK_D) {
+            right = false;
+            if (left) {
+            } else {
+                dx = 0;
+            }
+        } else if (code == KeyEvent.VK_W) {
+            up = false;
+            if (down) {
+            } else {
+                dy = 0;
+            }
+        } else if (code == KeyEvent.VK_S) {
+            down = false;
+            if (up) {
+            } else {
+                dy = 0;
+            }
+        }
+    }
 }
