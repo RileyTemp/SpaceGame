@@ -43,7 +43,7 @@ public class PanBoard extends JPanel implements ActionListener {
         //h = new Enemy2();
         addKeyListener(new Movement());
         setFocusable(true);
-        ImageIcon i1 = new ImageIcon("Make it rain.png");
+        ImageIcon i1 = new ImageIcon("background.png");
         background = i1.getImage();
         timer = new Timer(80, this);
         timer.start();
@@ -83,6 +83,7 @@ public class PanBoard extends JPanel implements ActionListener {
          }*/
     }
     
+    @Override
     public void actionPerformed(ActionEvent arg0) {
         //Label();
         p.move();
@@ -92,6 +93,7 @@ public class PanBoard extends JPanel implements ActionListener {
         repaint();
     }
     
+    @Override
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2d = (Graphics2D) g;
