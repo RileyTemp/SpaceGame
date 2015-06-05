@@ -11,11 +11,11 @@ public class Enemy {
     static int X, Y, I, BX, BY, nHit;
     boolean left, right, up, down;
     int nWidth, nLength, EH, EW, nEXP, nSpawn;
-    private final int nSpeed = 20;
-    ImageIcon e1 = new ImageIcon("Enemy2.png");
-    ImageIcon e2 = new ImageIcon("Enemy1.png");
-    ImageIcon e3 = new ImageIcon("Enemy3.png");
-    ImageIcon e4 = new ImageIcon("Enemy4.png");
+    private final int nSpeed = 30;
+    ImageIcon e1 = new ImageIcon("Enemy2.png");// Looking Left
+    ImageIcon e2 = new ImageIcon("Enemy1.png");// Looking Right
+    ImageIcon e3 = new ImageIcon("Enemy3.png");// Looking Up
+    ImageIcon e4 = new ImageIcon("Enemy4.png");// Looking down
     int imgWidth = e1.getIconHeight();
     int imgHeight = e2.getIconWidth();
     Image arnEnemy[] = new Image[5];
@@ -36,8 +36,8 @@ public class Enemy {
     public Enemy() {
         dx = 0;
         dy = 0;
-        x = 50;
-        y = 50;
+        x = 100;
+        y = 100;
         nEXP = 5;
         arnEnemy[1] = e1.getImage();
         arnEnemy[2] = e2.getImage();
@@ -77,16 +77,16 @@ public class Enemy {
 
     public void keyPressed(KeyEvent w) {
         int code = w.getKeyCode();
-        if (code == KeyEvent.VK_A) {
+        if (code == KeyEvent.VK_A) {//Left
             k = 1;
             dx = -nSpeed;
-        } else if (code == KeyEvent.VK_D) {
+        } else if (code == KeyEvent.VK_D) {//Right
             k = 2;
             dx = nSpeed;
-        } else if (code == KeyEvent.VK_W) {
+        } else if (code == KeyEvent.VK_W) {//Up
             k = 3;
             dy = -nSpeed;
-        } else if (code == KeyEvent.VK_S) {
+        } else if (code == KeyEvent.VK_S) {//Down
             k = 4;
             dy = nSpeed;
         }

@@ -1,9 +1,11 @@
+
 import java.io.FileNotFoundException;
 
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         Stats stats = new Stats();
-         Frame frame = new Frame();
+        Frame frame = new Frame();
     }
 }
+//Enemy doesn't appear until you move it

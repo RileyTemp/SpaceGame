@@ -13,14 +13,12 @@ public class Bullet {
     int x, y, dx, dy, nStahp, nStahp2, nStahp3, nStahp4, nCount, nCount2, nStop, nLeft,
             nRight, nUp, nDown, nHit, nKill;
     boolean shoot, stop, go;
-    private final int bSpeed = 70;
-    ImageIcon b1 = new ImageIcon("laser1.png");
-    ImageIcon b2 = new ImageIcon("laser2.png");
-    ImageIcon b3 = new ImageIcon("laser3.png");
-    ImageIcon b4 = new ImageIcon("laser4.png");
+    private final int bSpeed = 100;
+    ImageIcon b1 = new ImageIcon("laser1.png");//Left
+    ImageIcon b2 = new ImageIcon("laser2.png");//Right
     int imgWidth = b1.getIconHeight();
     int imgHeight = b2.getIconWidth();
-    Image arnShooting[] = new Image[5];
+    Image arnShooting[] = new Image[3];
     Label JLabel;
 
     static void SetEnemy(int _x, int _y, int _EH, int _EW, int _K) {
@@ -58,8 +56,6 @@ public class Bullet {
         go = false;
         arnShooting[1] = b1.getImage();
         arnShooting[2] = b2.getImage();
-        arnShooting[3] = b3.getImage();
-        arnShooting[4] = b4.getImage();
     }
 
     public void move() {
@@ -143,7 +139,7 @@ public class Bullet {
     public void keyPressed2(KeyEvent w) {
         int code = w.getKeyCode();
         if (code == KeyEvent.VK_SPACE) {
-            if (I == 0) { //Looking Left
+            if (I == 0) {
                 if (nS == 1) {
                     x = X - 2;
                     y = Y - 2;
@@ -161,7 +157,7 @@ public class Bullet {
                     }
                 }
             }
-            if (I == 1) { // Looking Right
+            if (I == 1) {
                 if (nS == 1) {
                     x = X - 2;
                     y = Y - 2;

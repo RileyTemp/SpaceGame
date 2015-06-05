@@ -4,9 +4,9 @@ public class Frame extends JFrame {
 
     public Frame() {
         add(new PanBoard());
-        setTitle("Welp");
+        setTitle("Space Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1000, 1000); //1370, 730 for fullscreen for laptop
+        setSize(1000, 1000);
         this.setResizable(true);
         setLocationRelativeTo(null);
         setVisible(true);

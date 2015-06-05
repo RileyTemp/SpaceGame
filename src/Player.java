@@ -8,10 +8,10 @@ public class Player {
     private Image img;
     int i;
     int x, y, bx, by, dx, dy;
-    private final int SPEED = 35;
+    private final int SPEED = 50;
     boolean left, right, up, down;
-    ImageIcon p1 = new ImageIcon("Spaceship left.png");// Looking Left
-    ImageIcon p2 = new ImageIcon("Spaceship right.png");// Looking Right
+    ImageIcon p1 = new ImageIcon("Spaceship left.png");
+    ImageIcon p2 = new ImageIcon("Spaceship right.png");
     ImageIcon p3 = new ImageIcon("Spaceship.png");
     ImageIcon p4 = new ImageIcon("Spaceship down.png");
     int imgWidth = p1.getIconHeight();

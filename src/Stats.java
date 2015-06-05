@@ -1,7 +1,9 @@
+
 import java.io.*;
 import java.util.*;
 
 public class Stats {
+
     public Stats() throws FileNotFoundException {
         String slvl = new String();
         String sName = new String();
@@ -23,7 +25,6 @@ public class Stats {
                 name.createNewFile();
                 System.out.println("Enter your name");
                 sName = sin.next();
-                //System.out.println(sName);
             }
             FileWriter fileWritter = new FileWriter(level.getName(), true);
             BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
@@ -47,29 +48,11 @@ public class Stats {
             atk = 5;
             hp = 50;
             Xpgoal = 100;
-        } else if (slvl.equals("two")) {
-            lvl = 2;
-            atk = 10;
-            hp = 50;
-            Xpgoal = 150;
-        } else if (slvl.equals("three")) {
-            lvl = 3;
-            atk = 15;
-            hp = 75;
-            Xpgoal = 200;
-        } else if (slvl.equals("four")) {
-            lvl = 4;
-            atk = 20;
-            hp = 100;
-            Xpgoal = 250;
-        } else if (slvl.equals("five")) {
-            lvl = 5;
-            atk = 25;
-            hp = 125;
-        }
-        sName = nin.next();
-        PanBoard.setStats(lvl, atk, hp, sName, currXp, Xpgoal);
-    }
 
-    
+            sName = nin.next();
+            PanBoard.setStats(lvl, atk, hp, sName, currXp, Xpgoal);
+        }
+
+
+    }
 }
